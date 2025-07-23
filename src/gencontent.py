@@ -37,7 +37,7 @@ def generate_pages_recursive(dir_path_content, template_path, dest_dir_path, bas
             html = entry.replace(".md", ".html")
             generate_page(os.path.join(dir_path_content, entry), template_path, os.path.join(dest_dir_path, html), basepath)
         else:
-            generate_pages_recursive(os.path.join(dir_path_content, entry), template_path, os.path.join(dest_dir_path, entry))
+            generate_pages_recursive(os.path.join(dir_path_content, entry), template_path, os.path.join(dest_dir_path, entry), basepath)
 
 
 def extract_title(md):
