@@ -14,13 +14,13 @@ def generate_page(from_path, template_path, dest_path, basepath):
 
     node = markdown_to_html_node(markdown_content)
     html = node.to_html()
-    html = html.replace('href="/', f'href="{basepath}')
-    html = html.replace('src="/', f'src="{basepath}')
+    html = html.replace('href="/', f'href={basepath}')
+    html = html.replace('src="/', f'src={basepath}')
 
     title = extract_title(markdown_content)
     template = template.replace("{{ Title }}", title)
-    template = template.replace('href="/', f'href="{basepath}')
-    template = template.replace('src="/', f'src="{basepath}')
+    template = template.replace('href="/', f'href={basepath}')
+    template = template.replace('src="/', f'src={basepath}')
     template = template.replace("{{ Content }}", html)
 
 
